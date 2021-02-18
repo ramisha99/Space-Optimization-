@@ -1,0 +1,18 @@
+Here are some suggestions on how to approach the problem.
+The most important observation is that this problem has a
+natural recursive structure: to lay out a large block of
+text we start by deciding how many words should appear on
+the first line. Once we make that decision the problem
+reduces to recursively laying out the remaining words on the
+following lines. In deciding how many words to put on the
+first line you have to start by determining the maximum
+number of words that will fit on that first line. Then, you
+should try every possible configuration for that first line
+ranging from putting just one word on that line up to the
+maximum number of words that will fit on that line. For each
+configuration you try you will need to figure out the
+penalty for the first line and add that penalty to the
+lowest penalty returned by the recursive call. The winning
+configuration is the one that minimizes the sum of the first
+line penalty and the subsequent line penalties: this is the
+value you will return from the function.
